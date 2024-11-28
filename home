@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Actualizar Seguimiento</title>
+</head>
+<body>
+  <h1>Actualizar Número de Seguimiento</h1>
+  <form id="updateForm">
+    <label for="trackingNumber">Número de seguimiento:</label>
+    <input type="text" id="trackingNumber" required>
+    <br>
+    <label for="status">Estado:</label>
+    <select id="status">
+      <option value="Enviado">Enviado</option>
+      <option value="En Proceso">En Proceso</option>
+      <option value="Entregado">Entregado</option>
+    </select>
+    <br>
+    <button type="submit">Actualizar</button>
+  </form>
+  <script>
+    document.getElementById('updateForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const trackingNumber = document.getElementById('trackingNumber').value;
+      const status = document.getElementById('status').value;
+      
+      // Enviar datos a la base de datos (puede ser Firebase o un servidor)
+      alert(`Estado del número ${trackingNumber} actualizado a ${status}`);
+    });
+  </script>
+</body>
+</html>
